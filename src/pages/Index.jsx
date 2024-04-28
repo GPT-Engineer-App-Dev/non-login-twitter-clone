@@ -4,7 +4,7 @@ import { getClient } from '../../lib/crud';
 
 const Index = () => {
   const [tweets, setTweets] = useState([]);
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState('anonymous');
   const [tweetText, setTweetText] = useState('');
   const toast = useToast();
   const client = getClient('twitter-clone');
@@ -20,10 +20,10 @@ const Index = () => {
   }, []);
 
   const handleTweet = async () => {
-    if (!username || !tweetText) {
+    if (!username || username === undefined || !tweetText) {
       toast({
         title: 'Error',
-        description: 'Username and tweet cannot be empty.',
+        description: 'Tweet cannot be empty. Default username is "anonymous".',
         status: 'error',
         duration: 3000,
         isClosable: true,
