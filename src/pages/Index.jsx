@@ -30,7 +30,7 @@ const Index = () => {
       });
       return;
     }
-    const tweet = { username: username || 'anonymous', text: tweetText, date: new Date().toISOString() };
+    const tweet = { value: { username: username || 'anonymous', text: tweetText, date: new Date().toISOString() } };
     const key = `tweet:${Date.now()}`;
     const success = await client.set(key, tweet);
     if (success) {
@@ -57,7 +57,7 @@ const Index = () => {
       <VStack spacing={4} align="stretch">
         {tweets.map((tweet, index) => (
           <Box key={index} p={4} shadow="md" borderWidth="1px">
-            <Text fontWeight="bold">{tweet.username || 'anonymous'}</Text>
+            <Text fontWeight="bold">{tweet.value.username}</Text>
             <Text>{tweet.value.text}</Text>
             <Text fontSize="sm">{new Date(tweet.value.date).toLocaleString()}</Text>
           </Box>
