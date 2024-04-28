@@ -45,7 +45,7 @@ const Index = () => {
       });
       return;
     }
-    const tweet = { value: { username: username || 'anonymous', text: tweetText, date: new Date().toISOString() } };
+    const tweet = { key, value: { username: username || 'anonymous', text: tweetText, date: new Date().toISOString() } };
     const key = `tweet:${Date.now()}`;
     const success = await client.set(key, tweet);
     if (success) {
