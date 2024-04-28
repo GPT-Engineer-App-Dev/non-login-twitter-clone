@@ -54,9 +54,9 @@ const Index = () => {
         <Input placeholder="What's happening?" value={tweetText} onChange={(e) => setTweetText(e.target.value)} />
         <Button colorScheme="twitter" mt={2} onClick={handleTweet}>Tweet</Button>
       </Box>
-      <VStack spacing={4} align="stretch" background="url('/images/twitter-banner.png')" backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat">
+      <VStack spacing={4} align="stretch">
         {tweets.map((tweet, index) => (
-          <Box key={index} p={4} shadow="md" borderWidth="1px" bg="rgba(0, 0, 0, 0.5)" color="white">
+          <Box key={index} p={4} shadow="md" borderWidth="1px">
             <Text fontWeight="bold">{tweet.value.username}</Text>
             <Text>{tweet.value.text}</Text>
             <Text fontSize="sm">{new Date(tweet.value.date).toLocaleString()}</Text>
