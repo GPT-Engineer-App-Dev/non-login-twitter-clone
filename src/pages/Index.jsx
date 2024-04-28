@@ -20,7 +20,7 @@ const Index = () => {
   }, []);
 
   const handleTweet = async () => {
-    if (!username || username === undefined || !tweetText) {
+    if (username === undefined || username.trim() === '' || !tweetText) {
       toast({
         title: 'Error',
         description: 'Tweet cannot be empty. Default username is "anonymous".',
