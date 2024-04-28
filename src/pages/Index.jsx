@@ -34,7 +34,7 @@ const Index = () => {
     const key = `tweet:${Date.now()}`;
     const success = await client.set(key, tweet);
     if (success) {
-      setTweets([tweet, ...tweets]);
+      setTweets([{...tweet, value: tweet}, ...tweets]);
       setTweetText('');
       toast({
         title: 'Tweet posted',
