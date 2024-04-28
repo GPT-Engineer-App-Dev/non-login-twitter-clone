@@ -1,5 +1,5 @@
 import { Box, VStack, Input, Button, Text, Image, useToast } from '@chakra-ui/react';
-import { FaTrash } from '@react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import { getClient } from '../../lib/crud';
 
